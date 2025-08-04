@@ -27,33 +27,36 @@ export function Contact() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    const response = await fetch('http://localhost:5000/api/sendMail',{
-      method:'POST',
-      body:JSON.stringify(formData),
+  try {
+    const response = await fetch('/api', {
+      method: 'POST',
+      body: JSON.stringify(formData),
       headers: {
-        'Content-Type': 'application/json', 
-      }
+        'Content-Type': 'application/json',
+      },
     });
-   
-     console.log('Response:', response);
-    
 
-   
-    response.ok ?
-    toast.success( 'Message sent successfully!' ):
-    toast.error('Failed to send message. Please try again later.');
-   setIsSubmitting(false);
-    setIsSubmitted(true);
-    // Reset form after a delay
-   
+    console.log('Response:', response);
+
+    if (response.ok) {
+      toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-  };
+      setIsSubmitted(true);
+    } else {
+      toast.error('Failed to send message. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Network error:', error);
+    toast.error('Something went wrong. Please check your connection.');
+  }
+
+  setIsSubmitting(false);
+};
+
 
   const contactInfo = [
     {
