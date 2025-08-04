@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -14,14 +14,14 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.APP_EMAIL, 
+      user: process.env.APP_EMAIL,
       pass: process.env.APP_PASSWORD,
     },
   });
 
   const mailOptions = {
     from: email,
-    to: process.env.APP_EMAIL, 
+    to: process.env.APP_EMAIL,
     subject: `${subject} (from ${name})`,
     text: message,
   };
@@ -34,3 +34,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ message: "Email sending failed" });
   }
 }
+
