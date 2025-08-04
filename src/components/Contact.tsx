@@ -32,7 +32,7 @@ export function Contact() {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('/api', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
