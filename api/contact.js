@@ -1,7 +1,12 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
+<<<<<<< HEAD
  
+=======
+console.log("PASS:", process.env.APP_PASSWORD ? "Loaded" : "Missing");
+
+>>>>>>> efe7c47 (debugging)
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -15,8 +20,8 @@ export default async function handler(req, res) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.APP_EMAIL,
-      pass: process.env.APP_PASSWORD,
+      user: process.env.APP_EMAIL ? process.env.APP_EMAIL :"maazharoon900@gmail.com",
+      pass: process.env.APP_PASSWORD ? process.env.APP_PASSWORD : import.meta.env.VITE_APP_PASSWORD,
     },
   });
 
