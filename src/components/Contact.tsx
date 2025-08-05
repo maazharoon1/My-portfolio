@@ -40,7 +40,7 @@ export function Contact() {
       },
     });
 
-    console.log('Response:', response);
+
 
     if (response.ok) {
       toast.success('Message sent successfully!');
