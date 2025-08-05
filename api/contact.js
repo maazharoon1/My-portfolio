@@ -4,9 +4,6 @@ export default async function handler(req, res) {
   const apiemail =process.env.APP_EMAIL ? process.env.APP_EMAIL :"maazharoon900@gmail.com";
   const apipassword = process.env.APP_PASSWORD ;
 
-  console.log('Email:', apiemail);
-  console.log('Password:', apipassword);
-   console.log('Password');
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
