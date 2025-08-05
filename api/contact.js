@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   const apiemail =process.env.APP_EMAIL ? process.env.APP_EMAIL :"maazharoon900@gmail.com";
-  const apipassword = process.env.APP_PASSWORD ? process.env.APP_PASSWORD : import.meta.env.VITE_APP_PASSWORD;
+  const apipassword = process.env.APP_PASSWORD ;
 
   console.log('Email:', apiemail);
   console.log('Password:', apipassword);
