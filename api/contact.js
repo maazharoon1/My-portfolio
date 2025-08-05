@@ -17,8 +17,8 @@ console.log("PASS:", process.env.APP_PASSWORD ? "Loaded" : "Missing");
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.APP_EMAIL,
-      pass: process.env.APP_PASSWORD,
+      user: import.meta.env.APP_EMAIL,
+      pass: import.meta.env.APP_PASSWORD,
     },
   });
 
