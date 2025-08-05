@@ -1,12 +1,12 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-<<<<<<< HEAD
- 
-=======
-console.log("PASS:", process.env.APP_PASSWORD ? "Loaded" : "Missing");
+  const apiemail =process.env.APP_EMAIL ? process.env.APP_EMAIL :"maazharoon900@gmail.com";
+  const apipassword = process.env.APP_PASSWORD ? process.env.APP_PASSWORD : import.meta.env.VITE_APP_PASSWORD;
 
->>>>>>> efe7c47 (debugging)
+  console.log('Email:', apiemail);
+  console.log('Password:', apipassword);
+   console.log('Password');
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -20,8 +20,8 @@ console.log("PASS:", process.env.APP_PASSWORD ? "Loaded" : "Missing");
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.APP_EMAIL ? process.env.APP_EMAIL :"maazharoon900@gmail.com",
-      pass: process.env.APP_PASSWORD ? process.env.APP_PASSWORD : import.meta.env.VITE_APP_PASSWORD,
+      user: apiemail,
+      pass: apipassword,
     },
   });
 
