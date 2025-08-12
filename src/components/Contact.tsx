@@ -46,6 +46,7 @@ export function Contact() {
       toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 800);
     } else {
       toast.error('Failed to send message. Please try again later.');
     }
