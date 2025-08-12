@@ -22,13 +22,14 @@ export default async function handler(req, res) {
     },
   });
 
-  const mailOptions = {
-    from: email,
-    to: process.env.APP_EMAIL,
-    subject: `${subject} (from ${name})`,
-    text: message,
-  };
-
+const mailOptions = {
+  from: apiEmail, 
+  replyTo: email, 
+  to: apiEmail,
+  subject: `${subject} (from ${name})`,
+  text: `${message}\n\nSender Email: ${email}`,
+};
+  
   try {
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ message: "Email sent successfully" });
