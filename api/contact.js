@@ -23,9 +23,9 @@ export default async function handler(req, res) {
   });
 
 const mailOptions = {
-  from: apiEmail, 
+  from: apiemail, 
   replyTo: email, 
-  to: apiEmail,
+  to: apiemail,
   subject: `${subject} (from ${name})`,
   text: `${message}\n\nSender Email: ${email}`,
 };
