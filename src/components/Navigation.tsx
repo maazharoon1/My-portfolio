@@ -131,7 +131,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
                   <motion.button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-all  ${
+                    className={`block w-full text-left px-4 py-3 transition-all  ${
                       activeSection === item.id
                         ? 'bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 text-foreground'
                         : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'

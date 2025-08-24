@@ -24,10 +24,23 @@ export function EnhancedProjects() {
       featured: true,
       stats: { stars: 45, contributors: 3, year: '2025' },
       gradient: 'from-purple-500 to-pink-500',
-    },
+    },{
+  id: 2,
+  title: 'Hamza Portfolio + PeakForm',
+  description: 'A modern portfolio website for Coach Hamza with PeakForm fitness assistant integration.',
+  longDescription: 'Developed using Next.js and JavaScript with Tailwind CSS for a sleek UI. Integrated PeakForm, an AI-powered fitness assistant, using Gemini API for real-time health and fitness guidance, Features include an interactive fitness chatbot, a contact system, and an achievements showcase.',
+  image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=500&h=300&fit=crop',
+  technologies: ['Next.js', 'JavaScript', 'Tailwind CSS', 'Gemini API', 'ShadCN'],
+  category: 'web',
+  liveUrl: 'https://hamzaportfolio-2025.vercel.app/',
+  githubUrl: 'https://github.com/maazharoon1/Personal-Trainer-Portfolio',
+  featured: true,
+  stats: { stars: 52, contributors: 1, year: '2025' },
+  gradient: 'from-pink-500 to-red-500',
+},
     
    {
-  id: 2,
+  id: 3,
   title: 'Bussiness Website',
   description: 'A professional packaging company website featuring services and contact integration.',
   longDescription: 'Built for Al-Maaz Packages to showcase their corrugated packaging solutions and services with a modern design and responsive layout.',
@@ -42,7 +55,7 @@ export function EnhancedProjects() {
 }
 ,
  {
-  id: 3,
+  id: 4,
   title: 'Spotify Clone',
   description: 'Music streaming app clone with playback controls and playlist features built using Node.js and JavaScript.',
   longDescription: 'A full-stack clone of Spotify. Backend powered by Node.js and frontend by  JavaScript with responsive design.',
